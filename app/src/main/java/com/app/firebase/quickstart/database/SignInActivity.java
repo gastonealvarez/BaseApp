@@ -135,33 +135,6 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
- /*   private void signUp() {
-        Log.d(TAG, "signUp");
-        if (!validateForm()) {
-            return;
-        }
-
-        showProgressDialog();
-        String email = mEmailField.getText().toString();
-        String password = mPasswordField.getText().toString();
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUser:onComplete:" + task.isSuccessful());
-                        hideProgressDialog();
-
-                        if (task.isSuccessful()) {
-                            onAuthSuccess(task.getResult().getUser());
-                        } else {
-                            Toast.makeText(SignInActivity.this, "Sign Up Failed",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }*/
-
     private void onAuthSuccess(FirebaseUser user) {
         String username = usernameFromEmail(user.getEmail());
 
@@ -210,12 +183,7 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
 
     @Override
     public void onClick(View v) {
-        /*int i = v.getId();
-        if (i == R.id.button_sign_in) {
-            signIn();
-        } else if (i == R.id.button_sign_up) {
-            signUp();
-        }*/
+
         switch (v.getId()) {
             case R.id.sign_in_button:
                 signInGoogle();
@@ -224,9 +192,9 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
                 signIn();
                 break;
             case R.id.button_sign_up:
-                //signUp();
-                Intent intent = new Intent(this, RegisterActivity.class);
-                startActivity(intent);
+                // Go to RegisterActivity
+                startActivity(new Intent(SignInActivity.this, RegisterActivity.class));
+                finish();
                 break;
         }
     }

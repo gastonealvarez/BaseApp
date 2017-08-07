@@ -2,10 +2,14 @@ package com.app.firebase.quickstart.database;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -91,7 +95,9 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
@@ -103,33 +109,6 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
             onAuthSuccess(mAuth.getCurrentUser());
         }
     }
-
-  /*  private void signIn() {
-        Log.d(TAG, "signIn");
-        if (!validateForm()) {
-            return;
-        }
-
-        showProgressDialog();
-        String email = mEmailField.getText().toString();
-        String password = mPasswordField.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "signIn:onComplete:" + task.isSuccessful());
-                        hideProgressDialog();
-
-                        if (task.isSuccessful()) {
-                            onAuthSuccess(task.getResult().getUser());
-                        } else {
-                            Toast.makeText(SignInActivity.this, "Sign In Failed",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }*/
 
     private void signInGoogle() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
@@ -211,19 +190,11 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
 
     @Override
     public void onClick(View v) {
-        /*int i = v.getId();
-        if (i == R.id.button_sign_in) {
-            signIn();
-        } else if (i == R.id.button_sign_up) {
-            signUp();
-        }*/
-        switch (v.getId()) {
+
+         switch (v.getId()) {
             case R.id.sign_in_button:
                 signInGoogle();
                 break;
-           /* case R.id.button_sign_in:
-                signIn();
-                break;*/
             case R.id.button_sign_up:
                 signUp();
                 break;
@@ -279,4 +250,23 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, SignInActivity.class));
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(this);
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
