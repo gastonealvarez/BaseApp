@@ -35,6 +35,7 @@
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:paddingLeft="7dp"
             tools:hint="E-mail" />
 
         <EditText
@@ -46,44 +47,60 @@
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:paddingLeft="7dp"
             tools:hint="Password" />
+
+        <TextView
+            android:id="@+id/text_recovery_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/olvidaste_tu_pass" />
+
+
+        <Button
+            android:id="@+id/button_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_buttons"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_email_password"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <Button
-            android:id="@+id/button_sign_in"
-            android:layout_width="150dp"
+        <TextView
+            android:id="@+id/text_ingreso_rapido"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in"
-            tools:text="Ingresar" />
+            android:layout_marginLeft="5dp"
+            android:text="@string/ingreso_rapido" />
 
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/button_sign_up"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:text="@string/sign_up"
-            tools:text="Registrarse" />
+            tools:text="Registrarse con e-mail" />
 
     </LinearLayout>
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:layout_gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="38dp" />
+
 
 </RelativeLayout>

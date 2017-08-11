@@ -1,13 +1,16 @@
 <resources>
     <string name="app_name">Base App</string>
-    <string name="menu_logout">Log out</string>
+    <string name="menu_logout">Cerrar sesión</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec condimentum ante, quis mattis mi. Proin ut rhoncus libero, ac euismod neque. Ut suscipit, enim a facilisis consequat, orci lacus venenatis orci, at ultricies orci nulla sed ex. In condimentum viverra velit, eget feugiat libero imperdiet vel. Aenean pretium, lectus vitae bibendum bibendum, diam turpis convallis eros, quis tristique leo sapien at ipsum. Praesent eu odio id nulla lobortis auctor. Donec eget dolor eget nisl euismod commodo vel a lacus. Quisque ut justo vitae urna pharetra accumsan. Etiam dignissim neque iaculis mauris viverra, blandit rhoncus odio porttitor. Phasellus nibh arcu.</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="hint_password">password</string>
-    <string name="hint_email">email</string>
-    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Registrarse con e-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">E-mail</string>
+    <string name="sign_in">Ingresar</string>
     <string name="heading_recent">Recent</string>
     <string name="heading_my_posts">My Posts</string>
     <string name="heading_my_top_posts">My Top Posts</string>
     <string name="register_activity_name">Registrarse</string>
+    <string name="ingreso_rapido">Ingreso rápido</string>
+    <string name="olvidaste_tu_pass">¿Olvidaste tu contraseña?</string>
+    <string name="recuperar_pass_button">Recuperar contraseña</string>
 </resources>

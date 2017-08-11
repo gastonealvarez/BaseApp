@@ -95,9 +95,8 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-       // getSupportActionBar().hide();
+       // Show button UP
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override

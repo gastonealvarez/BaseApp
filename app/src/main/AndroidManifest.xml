@@ -32,7 +32,10 @@
         </activity>
         <activity
             android:name="com.app.firebase.quickstart.database.RegisterActivity"
-            android:label="@string/register_activity_name">
+            android:label="@string/register_activity_name"></activity>
+        <activity android:name="com.app.firebase.quickstart.database.RecoveryActivity"
+            android:label="@string/olvidaste_tu_pass">
+
         </activity>
     </application>
 

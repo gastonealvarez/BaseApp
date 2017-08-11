@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.firebase.quickstart.database.models.User;
@@ -40,6 +41,7 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
     private EditText mPasswordField;
     private Button mSignInButton;
     private Button mSignUpButton;
+    private TextView mRecoveryPass;
 
     // CodeLab Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
@@ -61,10 +63,12 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
         mPasswordField = (EditText) findViewById(R.id.field_password);
         mSignInButton = (Button) findViewById(R.id.button_sign_in);
         mSignUpButton = (Button) findViewById(R.id.button_sign_up);
+        mRecoveryPass = (TextView) findViewById(R.id.text_recovery_pass);
 
         // Click listeners
         mSignInButton.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
+        mRecoveryPass.setOnClickListener(this);
 
         /* CodeLab
         * Add from FriendlyChat
@@ -196,6 +200,9 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
                 startActivity(new Intent(SignInActivity.this, RegisterActivity.class));
                 finish();
                 break;
+            case R.id.text_recovery_pass:
+                startActivity(new Intent(SignInActivity.this, RecoveryActivity.class));
+                finish();
         }
     }
 
