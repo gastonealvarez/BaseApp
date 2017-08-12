@@ -10,7 +10,9 @@
     <string name="heading_my_posts">My Posts</string>
     <string name="heading_my_top_posts">My Top Posts</string>
     <string name="register_activity_name">Registrarse</string>
-    <string name="ingreso_rapido">Ingreso rápido</string>
+    <string name="ingreso_rapido">Acceso rápido</string>
     <string name="olvidaste_tu_pass">¿Olvidaste tu contraseña?</string>
     <string name="recuperar_pass_button">Recuperar contraseña</string>
+    <string name="enter_adress_mail">Introduce la dirección de correo electrónico con la que te has registrado.</string>
+    <string name="we_to_send_mail_pass">Te enviaremos un correo que te permitirá elegir otra contraseña.</string>
 </resources>

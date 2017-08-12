@@ -19,21 +19,23 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/part_one_text_recovery_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="7dp"
             android:layout_marginTop="7dp"
             android:paddingLeft="5dp"
-            android:text="Introduce la dirección de correo electrónico con la que te has registrado." />
+            android:text="@string/enter_adress_mail" />
 
         <TextView
+            android:id="@+id/part_two_text_recovery_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="Te enviaremos un correo que te permitirá elegir otra contraseña." />
+            android:text="@string/we_to_send_mail_pass" />
 
         <EditText
-            android:id="@+id/field_email"
+            android:id="@+id/field_email_recovery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -45,7 +47,7 @@
             tools:hint="E-mail" />
 
         <Button
-            android:id="@+id/button_recovery"
+            android:id="@+id/button_recovery_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/recuperar_pass_button" />

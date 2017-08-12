@@ -63,7 +63,7 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
         mPasswordField = (EditText) findViewById(R.id.field_password);
         mSignInButton = (Button) findViewById(R.id.button_sign_in);
         mSignUpButton = (Button) findViewById(R.id.button_sign_up);
-        mRecoveryPass = (TextView) findViewById(R.id.text_recovery_pass);
+        mRecoveryPass = (TextView) findViewById(R.id.text_recovery_pass_question);
 
         // Click listeners
         mSignInButton.setOnClickListener(this);
@@ -200,7 +200,7 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
                 startActivity(new Intent(SignInActivity.this, RegisterActivity.class));
                 finish();
                 break;
-            case R.id.text_recovery_pass:
+            case R.id.text_recovery_pass_question:
                 startActivity(new Intent(SignInActivity.this, RecoveryActivity.class));
                 finish();
         }

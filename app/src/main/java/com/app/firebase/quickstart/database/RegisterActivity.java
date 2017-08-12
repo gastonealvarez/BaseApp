@@ -43,7 +43,6 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
 
     private EditText mEmailField;
     private EditText mPasswordField;
-    private Button mSignInButton;
     private Button mSignUpButton;
 
     // CodeLab Firebase instance variables
@@ -64,11 +63,9 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
         // Views
         mEmailField = (EditText) findViewById(R.id.field_email);
         mPasswordField = (EditText) findViewById(R.id.field_password);
-       // mSignInButton = (Button) findViewById(R.id.button_sign_in);
         mSignUpButton = (Button) findViewById(R.id.button_sign_up);
 
         // Click listeners
-      //  mSignInButton.setOnClickListener(this);
         mSignUpButton.setOnClickListener(this);
 
         /* CodeLab
@@ -261,7 +258,6 @@ public class RegisterActivity extends BaseActivity implements  GoogleApiClient.O
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                //NavUtils.navigateUpFromSameTask(this);
                 onBackPressed();
                 return true;
         }
