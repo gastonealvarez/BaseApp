@@ -36,7 +36,9 @@ public class RecoveryActivity extends AppCompatActivity implements View.OnClickL
         recoveryPassButton.setOnClickListener(this);
         emailAddress.setOnClickListener(this);
         // Show button UP
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     @Override
@@ -61,7 +63,13 @@ public class RecoveryActivity extends AppCompatActivity implements View.OnClickL
 
             switch (v.getId()){
                 case R.id.button_recovery_pass:
-                    sendMailResestPass(emailAddress.getText().toString());
+                    if(emailAddress.getText().toString().isEmpty()){
+                        Toast.makeText(RecoveryActivity.this, "Ingresa tu correo electrónico",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        sendMailResestPass(emailAddress.getText().toString());
+                    }
                     break;
 
             }

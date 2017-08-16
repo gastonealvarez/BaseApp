@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:contentDescription="@string/icon_description"
         android:src="@drawable/firebase_lockup_400" />
 
     <LinearLayout
@@ -31,11 +32,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:gravity="left"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:paddingLeft="7dp"
+            android:paddingStart="7dp"
             tools:hint="E-mail" />
 
         <EditText
@@ -43,21 +44,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:gravity="left"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:maxLines="1"
             android:paddingLeft="7dp"
+            android:paddingStart="7dp"
             tools:hint="Password" />
 
         <TextView
             android:id="@+id/text_recovery_pass_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:gravity="right"
             android:text="@string/olvidaste_tu_pass" />
 
 
@@ -74,6 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingBottom="10dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -85,7 +86,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
-            android:gravity="center"
+            android:layout_marginStart="5dp"
             android:text="@string/ingreso_rapido" />
 
         <com.google.android.gms.common.SignInButton
@@ -95,13 +96,34 @@
             android:layout_gravity="center"
             android:visibility="visible" />
 
-        <Button
-            android:id="@+id/button_sign_up"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="@string/sign_up"
-            tools:text="Registrarse con e-mail" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_are_you_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="@string/are_you_new_user" />
+
+            <TextView
+                android:id="@+id/text_register_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="11dp"
+                android:layout_marginRight="11dp"
+                android:text="@string/sign_up"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
     </LinearLayout>
 

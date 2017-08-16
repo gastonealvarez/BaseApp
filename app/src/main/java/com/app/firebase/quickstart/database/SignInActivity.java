@@ -40,8 +40,9 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
     private EditText mEmailField;
     private EditText mPasswordField;
     private Button mSignInButton;
-    private Button mSignUpButton;
+   // private Button mSignUpButton;
     private TextView mRecoveryPass;
+    private TextView mRegister;
 
     // CodeLab Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
@@ -62,13 +63,15 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
         mEmailField = (EditText) findViewById(R.id.field_email);
         mPasswordField = (EditText) findViewById(R.id.field_password);
         mSignInButton = (Button) findViewById(R.id.button_sign_in);
-        mSignUpButton = (Button) findViewById(R.id.button_sign_up);
+     //   mSignUpButton = (Button) findViewById(R.id.button_sign_up);
         mRecoveryPass = (TextView) findViewById(R.id.text_recovery_pass_question);
+        mRegister = (TextView) findViewById(R.id.text_register_user);
 
         // Click listeners
         mSignInButton.setOnClickListener(this);
-        mSignUpButton.setOnClickListener(this);
+      //  mSignUpButton.setOnClickListener(this);
         mRecoveryPass.setOnClickListener(this);
+        mRegister.setOnClickListener(this);
 
         /* CodeLab
         * Add from FriendlyChat
@@ -94,7 +97,9 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        getSupportActionBar().hide();
+        if(getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
     }
 
     @Override
@@ -195,7 +200,7 @@ public class SignInActivity extends BaseActivity implements  GoogleApiClient.OnC
             case R.id.button_sign_in:
                 signIn();
                 break;
-            case R.id.button_sign_up:
+            case R.id.text_register_user:
                 // Go to RegisterActivity
                 startActivity(new Intent(SignInActivity.this, RegisterActivity.class));
                 finish();
